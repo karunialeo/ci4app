@@ -1,0 +1,49 @@
+CRITICAL - 2021-06-05 01:36:42 --> Too few arguments to function App\Controllers\Coba::about(), 0 passed in E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Coba->about()
+#1 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+#2 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 E:\xampp\htdocs\ci4app\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('E:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-06-05 01:37:52 --> Too few arguments to function App\Controllers\Coba::about(), 0 passed in E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Coba->about()
+#1 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+#2 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 E:\xampp\htdocs\ci4app\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('E:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-06-05 02:35:25 --> Undefined variable $base_url
+#0 E:\xampp\htdocs\ci4app\app\Views\layout\header.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'E:\\xampp\\htdocs...', 26)
+#1 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\View\View.php(230): include('E:\\xampp\\htdocs...')
+#2 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('layout/header', Array, true)
+#4 E:\xampp\htdocs\ci4app\app\Controllers\Pages.php(9): view('layout/header')
+#5 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Pages->index()
+#6 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#7 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 E:\xampp\htdocs\ci4app\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#9 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('E:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-06-05 02:57:07 --> Undefined property: CodeIgniter\View\View::$endSection
+#0 E:\xampp\htdocs\ci4app\app\Views\pages\home.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'E:\\xampp\\htdocs...', 11)
+#1 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\View\View.php(230): include('E:\\xampp\\htdocs...')
+#2 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages/home', Array, true)
+#4 E:\xampp\htdocs\ci4app\app\Controllers\Pages.php(14): view('pages/home')
+#5 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Pages->index()
+#6 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#7 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 E:\xampp\htdocs\ci4app\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#9 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('E:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-06-05 03:15:48 --> Cannot access offset of type string on string
+#0 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\View\View.php(230): include()
+#1 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages/contact', Array, true)
+#3 E:\xampp\htdocs\ci4app\app\Controllers\Pages.php(37): view('pages/contact', Array)
+#4 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Pages->contact()
+#5 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#6 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 E:\xampp\htdocs\ci4app\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 E:\xampp\htdocs\ci4app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('E:\\xampp\\htdocs...')
+#9 {main}
