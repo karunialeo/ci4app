@@ -14,11 +14,11 @@ class Hfgleaders extends BaseController
     }
     public function index()
     {
-        $hfgleaders = $this->hfgleadersModel->findAll();
+        // $hfgleaders = $this->hfgleadersModel->findAll();
 
         $data = [
             'title' => 'List of HFG Leaders',
-            'hfgleaders' => $hfgleaders
+            'hfgleaders' => $this->hfgleadersModel->getHfgleaders()
         ];
 
         return view('hfgleaders/index', $data);
@@ -26,6 +26,10 @@ class Hfgleaders extends BaseController
 
     public function detail($slug)
     {
-        echo $slug;
+        $data = [
+            'title' => 'Details',
+            'hfgleaders' => $this->hfgleadersModel->getHfgleaders($slug)
+        ];
+        return view('hfgleaders/detail', $data);
     }
 }
