@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('/pages/contact'); ?>">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('/hfgleaders'); ?>">HFG Leaders</a>
+                </li>
             </ul>
         </div>
     </div>

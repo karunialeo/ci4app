@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 
+$routes->get('/hfgleaders/(:segment)', 'Hfgleaders::detail/$1');
+
 
 /*
  * --------------------------------------------------------------------
