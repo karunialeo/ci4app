@@ -8,6 +8,7 @@ class HfgleadersModel extends Model
 {
     protected $table = 'hfgleaders';
     protected $useTimestamps = true;
+    protected $allowedFields = ['name', 'slug', 'dob', 'insta', 'division', 'photo'];
 
     public function getHfgleaders($slug = false)
     {

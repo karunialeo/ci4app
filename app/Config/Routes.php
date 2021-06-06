@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Controllers\Hfgleaders;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -33,7 +35,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 
-$routes->get('/hfgleaders/(:segment)', 'Hfgleaders::detail/$1');
+$routes->get('/hfgleaders/create', 'Hfgleaders::create');
+$routes->get('/hfgleaders/edit/(:segment)', 'Hfgleaders::edit/$1');
+$routes->delete('/hfgleaders/(:num)', 'Hfgleaders::delete/$1');
+$routes->get('/hfgleaders/(:any)', 'Hfgleaders::detail/$1');
 
 
 /*

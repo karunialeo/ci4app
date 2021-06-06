@@ -17,8 +17,12 @@
                             <p class="card-text">Date of Birth : <?= $hfgleaders['dob']; ?></p>
                             <p class="card-text"><a href="http://instagram.com/<?= $hfgleaders['insta']; ?>" class="alert-link">@<?= $hfgleaders['insta']; ?></a></p>
 
-                            <a href="" class="btn btn-warning">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="/hfgleaders/edit/<?= $hfgleaders['slug']; ?>" class="btn btn-warning">Edit</a>
+                            <form action="/hfgleaders/<?= $hfgleaders['id']; ?>" method="POST" class="d-inline">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+                            </form>
                             <br><br>
                             <a href="/hfgleaders">Go Back</a>
                         </div>

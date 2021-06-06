@@ -4,8 +4,13 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col">
-            <h1>List of HFG Leaders</h1>
-            <br>
+            <a href="/hfgleaders/create" class="btn btn-primary mb-3">Add</a>
+            <h1 class="mb-3">List of HFG Leaders</h1>
+            <?php if (session()->getFlashdata('message')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('message'); ?>
+                </div>
+            <?php endif; ?>
             <table class="table table-hover">
                 <thead>
                     <tr>
