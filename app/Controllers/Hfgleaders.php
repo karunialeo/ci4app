@@ -81,14 +81,31 @@ class Hfgleaders extends BaseController
                 ]
             ],
             'photo' => [
-                'rules' => 'required',
+                'rules' => 'max_size[photo,2048]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Photo required.',
+                    'max_size' => 'File size cannot exceed 2MB.',
+                    'is_image' => 'Your file is not an image.',
+                    'mime_in' => 'Your file is not an image.'
                 ]
             ]
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('/hfgleaders/create')->withInput()->with('validation', $validation);
+            // $validation = \Config\Services::validation();
+            // return redirect()->to('/hfgleaders/create')->withInput()->with('validation', $validation);
+            return redirect()->to('/hfgleaders/create')->withInput();
+        }
+
+        // ambil gambar
+        $filePhoto = $this->request->getFile('photo');
+        // apakah tidak ada gambar yang di upload
+        if ($filePhoto->getError() == 4) {
+            $namePhoto = 'default.png';
+        } else {
+            // generate random file name
+            $namePhoto = $filePhoto->getRandomName();
+            // pindahkan file ke folder img
+            $filePhoto->move('img', $namePhoto);
+            // ambil nama file
+            // $namePhoto = $filePhoto->getName();
         }
 
         $slug = url_title($this->request->getVar('name'), '-', true);
@@ -98,7 +115,7 @@ class Hfgleaders extends BaseController
             'slug' => $slug,
             'dob' => $this->request->getVar('dob'),
             'insta' => $this->request->getVar('insta'),
-            'photo' => $this->request->getVar('photo'),
+            'photo' => $namePhoto,
             'division' => $this->request->getVar('division')
         ]);
 
@@ -109,6 +126,15 @@ class Hfgleaders extends BaseController
 
     public function delete($id)
     {
+        // find photo by id
+        $hfgleaders = $this->hfgleadersModel->find($id);
+
+        // cek jika file gambarnya default
+        if ($hfgleaders['photo'] != 'default.png') {
+            // delete photo
+            unlink('img/' . $hfgleaders['photo']);
+        }
+
         $this->hfgleadersModel->delete($id);
         session()->setFlashdata('message', 'Delete Successful.');
         return redirect()->to('/hfgleaders');
@@ -162,14 +188,31 @@ class Hfgleaders extends BaseController
                 ]
             ],
             'photo' => [
-                'rules' => 'required',
+                'rules' => 'max_size[photo,2048]|is_image[photo]|mime_in[photo,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'required' => 'Photo required.',
+                    'max_size' => 'File size cannot exceed 2MB.',
+                    'is_image' => 'Your file is not an image.',
+                    'mime_in' => 'Your file is not an image.'
                 ]
             ]
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('/hfgleaders/edit')->withInput()->with('validation', $validation);
+            // $validation = \Config\Services::validation();
+            // return redirect()->to('/hfgleaders/edit')->withInput()->with('validation', $validation);
+            return redirect()->to('/hfgleaders/edit')->withInput();
+        }
+
+        // ambil gambar
+        $filePhoto = $this->request->getFile('photo');
+        // apakah gambar tidak diubah
+        if ($filePhoto->getError() == 4) {
+            $namePhoto = $this->request->getVar('photoOld');
+        } else {
+            // generate random file name
+            $namePhoto = $filePhoto->getRandomName();
+            // pindahkan file ke folder img
+            $filePhoto->move('img', $namePhoto);
+            // hapus file lama
+            unlink('img/' . $this->request->getVar('photoOld'));
         }
 
         $slug = url_title($this->request->getVar('name'), '-', true);
@@ -180,7 +223,7 @@ class Hfgleaders extends BaseController
             'slug' => $slug,
             'dob' => $this->request->getVar('dob'),
             'insta' => $this->request->getVar('insta'),
-            'photo' => $this->request->getVar('photo'),
+            'photo' => $namePhoto,
             'division' => $this->request->getVar('division')
         ]);
 

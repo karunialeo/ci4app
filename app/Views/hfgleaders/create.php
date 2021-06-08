@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-8">
             <h2>Add HFG Leaders</h2>
-            <form action="/hfgleaders/save" method="POST">
+            <form action="/hfgleaders/save" method="POST" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -36,10 +36,16 @@
                 </div>
                 <div class="form-group row">
                     <label for="photo" class="col-sm-2 col-form-label">Photo</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('photo')) ? 'is-invalid' : ''; ?>" id="photo" name="photo" value="<?= old('photo'); ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('photo') ?>
+                    <div class="col-sm-2">
+                        <img src="/img/default.png" alt="default" class="img-thumbnail img-preview">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input <?= ($validation->hasError('photo')) ? 'is-invalid' : ''; ?>" id="photo" name="photo" onchange="previewImg()">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('photo') ?>
+                            </div>
+                            <label class="custom-file-label" for="photo">Choose file</label>
                         </div>
                     </div>
                 </div>
