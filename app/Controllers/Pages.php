@@ -5,7 +5,9 @@ namespace App\Controllers;
 class Pages extends BaseController
 {
     public function index()
+
     {
+        $faker = \Faker\Factory::create();
         $data = [
             'title' => 'Home | Karunia Leo Gultom',
             'tes' => ['satu', 'dua', 'tiga']

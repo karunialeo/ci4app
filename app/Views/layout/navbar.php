@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('/hfgleaders'); ?>">HFG Leaders</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('/jemaat'); ?>">Daftar Jemaat</a>
+                </li>
             </ul>
         </div>
     </div>

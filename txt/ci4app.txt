@@ -1,0 +1,7 @@
+migration adalah sebuah cara yang convenient (nyaman) untuk
+memodifikasi database secara terstruktur dan terorganisir
+
+seeder akan mengisi table yang telah di migrasi secara otomatis
+database seeding adalah cara yang praktis untuk menambah data
+ke database. digunakan khususnya pada saat development,
+ketika kita ingin mengisi database dengan data sampel
